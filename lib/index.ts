@@ -7,7 +7,7 @@ import * as path from 'path';
 
 Bluebird.promisifyAll(childProcess);
 Bluebird.promisifyAll(fs);
-const mkdirpAsync = Bluebird.promisify(mkdirp);
+const mkdirpAsync: (string) => Promise<void> = Bluebird.promisify(mkdirp);
 
 type BackupOptions = {
   username: string,
