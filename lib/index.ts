@@ -216,9 +216,8 @@ async function backupRepositoryComments(options: BackupOptions, repository: Repo
   await (<any>fs).writeFileAsync(targetPath, JSON.stringify(comments));
 }
 
-async function runBackup(options: BackupOptions) {
+export default async function runBackup(options: BackupOptions) {
   const githubApi = new GitHubApi({
-    // debug: true,
     Promise: Bluebird,
   });
   await githubApi.authenticate(options.authentication);
@@ -238,21 +237,3 @@ async function runBackup(options: BackupOptions) {
     concurrency: 20,
   });
 }
-
-runBackup({
-  username: 'beijaflor-io',
-  authentication: {
-    type: 'token',
-    token: process.env.GITHUB_API_TOKEN,
-  },
-  output: {
-    type: 'directory',
-    path: path.join(process.cwd(), './output'),
-  }
-}).then(() => {
-  console.log('Done');
-  process.exit(0);
-}, (err) => {
-  console.error(err);
-  process.exit(1);
-});

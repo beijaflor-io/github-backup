@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+const nconf = require('nconf');
+const runBackup = require('..').default;
+
+nconf.argv({
+  token: {
+    demand: true,
+    description: 'GitHub API Token',
+  },
+  username: {
+    demand: true,
+    description: 'GitHub User/Organization',
+  },
+  'output-dir': {
+    demand: true,
+    description: 'Where to output the results',
+  },
+});
+
+runBackup({
+  username: nconf.get('username') || 'beijaflor-io',
+  authentication: {
+    type: 'token',
+    token: nconf.get('token') || process.env.GITHUB_API_TOKEN,
+  },
+  output: {
+    type: 'directory',
+    path: nconf.get('output-dir') || path.join(process.cwd(), './output'),
+  }
+}).then(() => {
+  console.log('Done');
+  process.exit(0);
+}, (err) => {
+  console.error(err);
+  process.exit(1);
+});
