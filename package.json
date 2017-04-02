@@ -1,7 +1,7 @@
 {
   "name": "github-backup",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backups for GitHub",
   "bin": "bin/github-backup",
   "main": "lib/index.js",
   "scripts": {
