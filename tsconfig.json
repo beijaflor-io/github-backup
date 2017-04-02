@@ -1,5 +1,9 @@
 {
+  "compilerOptions": {
+    "strictNullChecks": true
+  },
   "exclude": [
-    "./output/**/*"
+    "./output/**/*",
+    "./node_modules/typescript/**/*"
   ]
 }
