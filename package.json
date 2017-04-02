@@ -11,14 +11,12 @@
   "author": "Pedro Tacla Yamada",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.36.0",
     "bluebird": "^3.5.0",
     "github": "^9.2.0",
     "mkdirp": "^0.5.1",
     "nconf": "^0.8.4"
   },
   "devDependencies": {
-    "@types/aws-sdk": "0.0.42",
     "@types/bluebird": "^3.5.2",
     "@types/es6-promise": "0.0.32",
     "@types/github": "^7.1.0",
