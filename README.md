@@ -20,3 +20,6 @@ Options:
 **`github-backup`** is written in _TypeScript_. You can run a watch server with
 `./node_modules/.bin/tsc --watch` and compile assets with
 `./node_modules/.bin/tsc`. Commit the compiled assets after building.
+
+## License
+GPLv3
