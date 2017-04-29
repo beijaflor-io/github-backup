@@ -18,7 +18,7 @@ nconf.argv({
 });
 
 runBackup({
-  username: nconf.get('username') || 'beijaflor-io',
+  username: nconf.get('username'),
   authentication: {
     type: 'token',
     token: nconf.get('token') || process.env.GITHUB_API_TOKEN,
