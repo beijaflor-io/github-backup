@@ -22,4 +22,4 @@ Options:
 `./node_modules/.bin/tsc`. Commit the compiled assets after building.
 
 ## License
-GPLv3
+AGPLv3
